@@ -5,7 +5,7 @@
 ### App Description
 Simple flashcard app that allows you to test your knowledge!
 
-### App Walk-though
+### App Walk-Through
 
 <img src="https://media.giphy.com/media/lRpofKdt7nReqBc8i6/giphy.gif" width=200><br>
 
