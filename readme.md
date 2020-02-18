@@ -7,7 +7,7 @@ Simple flashcard app that allows you to test your knowledge!
 
 ### App Walk-though
 
-<img src="https://media.giphy.com/media/Y3GTrbOJnbGsj3v9j8/giphy.gif" width=200><br>
+<img src="https://media.giphy.com/media/lRpofKdt7nReqBc8i6/giphy.gif" width=200><br>
 
 
 ## Required
