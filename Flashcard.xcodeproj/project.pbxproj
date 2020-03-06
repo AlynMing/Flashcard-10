@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A471774E2410BDF000778086 /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A471774D2410BDF000778086 /* CreationViewController.swift */; };
 		A4A2434F23F8784F00CEA55E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A2434E23F8784F00CEA55E /* AppDelegate.swift */; };
 		A4A2435123F8784F00CEA55E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A2435023F8784F00CEA55E /* ViewController.swift */; };
 		A4A2435423F8784F00CEA55E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4A2435223F8784F00CEA55E /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A471774D2410BDF000778086 /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
 		A4A2434B23F8784F00CEA55E /* Flashcard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashcard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A2434E23F8784F00CEA55E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4A2435023F8784F00CEA55E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				A4A2434E23F8784F00CEA55E /* AppDelegate.swift */,
 				A4A2435023F8784F00CEA55E /* ViewController.swift */,
 				A4A2435223F8784F00CEA55E /* Main.storyboard */,
+				A471774D2410BDF000778086 /* CreationViewController.swift */,
 				A4A2435523F8785100CEA55E /* Assets.xcassets */,
 				A4A2435723F8785100CEA55E /* LaunchScreen.storyboard */,
 				A4A2435A23F8785100CEA55E /* Info.plist */,
@@ -137,6 +140,7 @@
 			files = (
 				A4A2435123F8784F00CEA55E /* ViewController.swift in Sources */,
 				A4A2434F23F8784F00CEA55E /* AppDelegate.swift in Sources */,
+				A471774E2410BDF000778086 /* CreationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

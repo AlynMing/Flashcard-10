@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         frontLabel.layer.cornerRadius = 20.0
         backLabel.layer.cornerRadius = 20.0
         card.layer.cornerRadius = 20.0
@@ -43,6 +44,20 @@ class ViewController: UIViewController {
         answerThree.layer.borderWidth = 3.0
         answerThree.layer.borderColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        
+        let navigationController = segue.destination as! UINavigationController
+        
+        let creationController = navigationController.topViewController as! CreationViewController
+        
+        if segue.identifier == "EditSegue"{
+            creationController.initialQuestion = frontLabel.text
+            creationController.initialAnswer = backLabel.text
+        }
+
+        creationController.flashcardsController = self
+    }
 
     
     @IBAction func didTapOnFlashcard(_ sender: Any) {
@@ -56,16 +71,52 @@ class ViewController: UIViewController {
         }
     }
     
+    func updateFlashcard(question: String, answer: String, answer1: String, answer2: String, answer3: String) {
+        frontLabel.text = question
+        backLabel.text = answer
+        
+        answerOne.setTitle(answer1, for: .normal)
+        answerTwo.setTitle(answer2, for: .normal)
+        answerThree.setTitle(answer3, for: .normal)
+        
+        // buttons should be displayed again for new question
+        answerOne.isHidden = false
+        answerTwo.isHidden = false
+        answerThree.isHidden = false
+        
+        // answer should be hidden for new question
+        frontLabel.isHidden = false
+        
+    }
+    
     @IBAction func didTapOne(_ sender: Any) {
-        answerOne.isHidden = true
+        if answerOne.titleLabel!.text == backLabel.text{
+            frontLabel.isHidden = true
+        }
+        else{
+            answerOne.isHidden = true
+        }
+        //answerOne.isHidden = true
     }
     
     @IBAction func didTapTwo(_ sender: Any) {
-        frontLabel.isHidden = true
+        //frontLabel.isHidden = true
+        if answerTwo.titleLabel!.text == backLabel.text{
+            frontLabel.isHidden = true
+        }
+        else{
+            answerTwo.isHidden = true
+        }
     }
     
     @IBAction func didTapThree(_ sender: Any){
-        answerThree.isHidden = true
+        //answerThree.isHidden = true
+        if answerThree.titleLabel!.text == backLabel.text{
+            frontLabel.isHidden = true
+        }
+        else{
+            answerThree.isHidden = true
+        }
     }
 }
 
