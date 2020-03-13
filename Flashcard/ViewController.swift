@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         readSavedFlashcards()
         
         if (flashcards.count == 0) {
-            updateFlashcard(question: "What is the tallest building in the world?", answer: "Burj Khalifa", answer1: "Entisar Tower", answer2: "Burj Khalifa", answer3: "China Zun")
+            updateFlashcard(question: "What is the tallest building in the world?", answer: "Burj Khalifa", answer1: "Entisar Tower", answer2: "Burj Khalifa", answer3: "China Zun", isExisting: false)
         }
         else{
             updateLabels()
@@ -94,29 +94,39 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateFlashcard(question: String, answer: String, answer1: String, answer2: String, answer3: String) {
+    func updateFlashcard(question: String, answer: String, answer1: String, answer2: String, answer3: String, isExisting: Bool) {
         
         let flashcard = Flashcard(question: question, answer: answer)
-       // frontLabel.text = flashcard.question
-       // backLabel.text = flashcard.answer
         
-        // add flashcard to array of flashcards
-        flashcards.append(flashcard)
-        print("Added new flashcard")
-        print("We now have \(flashcards.count) flashcard(s)")
+        if isExisting {
+            flashcards[currentIndex] = flashcard
+        }
         
-        currentIndex = flashcards.count-1
-        answerOne.setTitle(answer1, for: .normal)
-        answerTwo.setTitle(answer2, for: .normal)
-        answerThree.setTitle(answer3, for: .normal)
-        
-        // buttons should be displayed again for new question
-        answerOne.isHidden = false
-        answerTwo.isHidden = false
-        answerThree.isHidden = false
-        
-        // answer should be hidden for new question
-        frontLabel.isHidden = false
+        else{
+            
+            // frontLabel.text = flashcard.question
+            // backLabel.text = flashcard.answer
+            
+            // add flashcard to array of flashcards
+            flashcards.append(flashcard)
+            print("Added new flashcard")
+            print("We now have \(flashcards.count) flashcard(s)")
+            
+            currentIndex = flashcards.count-1
+            answerOne.setTitle(answer1, for: .normal)
+            answerTwo.setTitle(answer2, for: .normal)
+            answerThree.setTitle(answer3, for: .normal)
+            
+            // buttons should be displayed again for new question
+            answerOne.isHidden = false
+            answerTwo.isHidden = false
+            answerThree.isHidden = false
+            
+            // answer should be hidden for new question
+            frontLabel.isHidden = false
+            
+        }
+       
         
         updateNextPrevButtons()
         
@@ -229,5 +239,34 @@ class ViewController: UIViewController {
             flashcards.append(contentsOf: savedCards)
         }
     }
+    
+    func deleteCurrentFlashcard() {
+        
+        //delete current
+        flashcards.remove(at: currentIndex)
+        if currentIndex > flashcards.count - 1 {
+            currentIndex = flashcards.count - 1
+        }
+        updateNextPrevButtons()
+        updateLabels()
+        saveAllFlashcardsToDisk()
+        
+    }
+    @IBAction func didTapOnDelete(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Delete Flashcard", message: "Are you sure you want to delete it?", preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
+            self.deleteCurrentFlashcard()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
+    }
+    
+    
+    
 }
 
