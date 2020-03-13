@@ -20,13 +20,18 @@ class CreationViewController: UIViewController {
     
     var initialQuestion: String?
     var initialAnswer: String?
-    
+    var initialAnswer1: String?
+    var initialAnswer2: String?
+    var initialAnswer3: String?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         questionTextField.text = initialQuestion
         answerTextField.text = initialAnswer
+        answer1.text = initialAnswer1
+        answer2.text = initialAnswer2
+        answer3.text = initialAnswer3
         
         
     }
@@ -40,6 +45,7 @@ class CreationViewController: UIViewController {
         // assign strings in question and answer fields to variables
         let questionText = questionTextField.text
         let answerText = answerTextField.text
+    
         
         let ans1Text = answer1.text
         let ans2Text = answer2.text
@@ -51,7 +57,7 @@ class CreationViewController: UIViewController {
         let alert = UIAlertController(title: "Missing Text", message: "Question or Answer field left blank", preferredStyle: .alert)
         alert.addAction(okAction)
        
-        if (questionText == nil || answerText == nil || questionText!.isEmpty || answerText!.isEmpty){
+        if (questionText == nil || answerText == nil || ans1Text == nil || ans2Text == nil || ans3Text == nil ||  questionText!.isEmpty || answerText!.isEmpty || ans1Text!.isEmpty || ans2Text!.isEmpty || ans3Text!.isEmpty ){
             present(alert, animated: true)
         }
         else{

@@ -12,6 +12,7 @@ struct Flashcard {
     
     var question: String
     var answer: String
+    
 }
 
 class ViewController: UIViewController {
@@ -57,6 +58,7 @@ class ViewController: UIViewController {
         answerThree.layer.borderColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         
         readSavedFlashcards()
+        
         
         if (flashcards.count == 0) {
             updateFlashcard(question: "What is the tallest building in the world?", answer: "Burj Khalifa", answer1: "Entisar Tower", answer2: "Burj Khalifa", answer3: "China Zun", isExisting: false)
