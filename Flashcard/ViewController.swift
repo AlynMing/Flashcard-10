@@ -12,6 +12,9 @@ struct Flashcard {
     
     var question: String
     var answer: String
+    var answer1: String
+    var answer2: String
+    var answer3: String
     
 }
 
@@ -79,6 +82,9 @@ class ViewController: UIViewController {
         if segue.identifier == "EditSegue"{
             creationController.initialQuestion = frontLabel.text
             creationController.initialAnswer = backLabel.text
+            creationController.initialAnswer1 = answerOne.titleLabel!.text
+            creationController.initialAnswer2 = answerTwo.titleLabel!.text
+            creationController.initialAnswer3 = answerThree.titleLabel!.text 
         }
 
         creationController.flashcardsController = self
@@ -98,7 +104,7 @@ class ViewController: UIViewController {
     
     func updateFlashcard(question: String, answer: String, answer1: String, answer2: String, answer3: String, isExisting: Bool) {
         
-        let flashcard = Flashcard(question: question, answer: answer)
+        let flashcard = Flashcard(question: question, answer: answer, answer1: answer1, answer2: answer2, answer3: answer3)
         
         if isExisting {
             flashcards[currentIndex] = flashcard
@@ -141,6 +147,7 @@ class ViewController: UIViewController {
     @IBAction func didTapOne(_ sender: Any) {
         if answerOne.titleLabel!.text == backLabel.text{
             frontLabel.isHidden = true
+            answerOne.isHidden = false
         }
         else{
             answerOne.isHidden = true
@@ -152,6 +159,7 @@ class ViewController: UIViewController {
         //frontLabel.isHidden = true
         if answerTwo.titleLabel!.text == backLabel.text{
             frontLabel.isHidden = true
+            answerTwo.isHidden = false
         }
         else{
             answerTwo.isHidden = true
@@ -162,14 +170,21 @@ class ViewController: UIViewController {
         //answerThree.isHidden = true
         if answerThree.titleLabel!.text == backLabel.text{
             frontLabel.isHidden = true
+            answerThree.isHidden = false
         }
         else{
             answerThree.isHidden = true
         }
     }
     @IBAction func didTapOnNext(_ sender: Any) {
+        
+        frontLabel.isHidden = false
+        answerOne.isHidden = false
+        answerTwo.isHidden = false
+        answerThree.isHidden = false
         // increment card index
         currentIndex = currentIndex + 1
+        
         
         // update labels
         updateLabels()
@@ -179,6 +194,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapOnPrev(_ sender: Any) {
+        
+        frontLabel.isHidden = false
+        answerOne.isHidden = false
+        answerTwo.isHidden = false
+        answerThree.isHidden = false
         
         //decrement card index
         currentIndex = currentIndex - 1
@@ -218,12 +238,16 @@ class ViewController: UIViewController {
         frontLabel.text = currentFlashcard.question
         backLabel.text = currentFlashcard.answer
         
+        answerOne.setTitle(currentFlashcard.answer1, for: .normal)
+        answerTwo.setTitle(currentFlashcard.answer2, for: .normal)
+        answerThree.setTitle(currentFlashcard.answer3, for: .normal)
+        
     }
     
     
     func saveAllFlashcardsToDisk() {
         
-        let dictionaryArray = flashcards.map { (card) -> [String: String] in return ["question": card.question, "answer": card.answer]  }
+        let dictionaryArray = flashcards.map { (card) -> [String: String] in return ["question": card.question, "answer": card.answer, "answer1": card.answer1, "answer2":card.answer2, "answer3": card.answer3]  }
         
         UserDefaults.standard.set(dictionaryArray, forKey: "flashcards")
         
@@ -234,7 +258,7 @@ class ViewController: UIViewController {
         
         if let dictionaryArray = UserDefaults.standard.array(forKey: "flashcards") as? [[String: String]] {
         
-            let savedCards = dictionaryArray.map { dictionary -> Flashcard in return Flashcard(question: dictionary["question"]!, answer: dictionary["answer"]!)
+            let savedCards = dictionaryArray.map { dictionary -> Flashcard in return Flashcard(question: dictionary["question"]!, answer: dictionary["answer"]!, answer1: dictionary["answer1"] ?? "", answer2: dictionary["answer2"] ?? "", answer3: dictionary["answer3"] ?? "" )
                 
                 }
             

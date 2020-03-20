@@ -33,7 +33,6 @@ class CreationViewController: UIViewController {
         answer2.text = initialAnswer2
         answer3.text = initialAnswer3
         
-        
     }
     
 

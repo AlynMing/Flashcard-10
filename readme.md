@@ -7,7 +7,7 @@ Updated Flashcard App to enable the storing of data and accessing different flas
 
 ### App Walk-though
 
-<img src="https://media.giphy.com/media/U1Tmu1NQJDvMBFpyFl/giphy.gif" width=200><br>
+<img src="https://media.giphy.com/media/gjrzO2WrqfWVste53e/giphy.gif" width=200><br>
 
 ## Required
 - [x] User can browse through multiple flashcards
@@ -16,7 +16,7 @@ Updated Flashcard App to enable the storing of data and accessing different flas
 ## Optional
 - [x] User can delete a flashcard
 - [x] User can edit existing flashcard
-- [ ] User can store multiple choice questions
+- [x] User can store multiple choice questions
 
 
 ## Lab 2
