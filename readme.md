@@ -3,7 +3,7 @@
 ## Lab 3
 
 ### App Description
-Updated Flashcard App to enable the storing of data and accessing different flashcards in our study set. 
+Updated Flashcard App to enable the storing of data, access to different flashcards in our study set, deletion of flashcards, and editing of an existing flashcard. 
 
 ### App Walk-though
 
