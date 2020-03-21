@@ -7,7 +7,7 @@ Updated Flashcard App which now includes assets (Splash Screen logo, AppIcon, Bu
   
 ### App Walk-though
 
-<img src="https://media.giphy.com/media/kf8sH4VxCq0YTkaPTb/giphy.gif" width=200><br>
+<img src="https://media.giphy.com/media/QaMUCDZc4bOuNF4AaF/giphy.gif" width=200><br>
 
 ## Required
 - [x] User should see the app icon 
