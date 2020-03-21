@@ -68,6 +68,9 @@
                                 <state key="normal" title="Burj Khalifa">
                                     <color key="titleColor" red="0.26859277059999997" green="0.60501257990000001" blue="0.93078044039999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.5702066603" green="0.69988665800000005" blue="0.67195130059999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="didTapTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jbe-VF-gMS"/>
                                 </connections>
@@ -106,6 +109,9 @@
                                 <state key="normal" title="China Zun">
                                     <color key="titleColor" red="0.26859277059999997" green="0.60501257990000001" blue="0.93078044039999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.5702066603" green="0.69988665800000005" blue="0.67195130059999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="didTapThree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aNp-3r-H94"/>
                                 </connections>
@@ -116,6 +122,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Entisar Tower">
                                     <color key="titleColor" red="0.26859277059999997" green="0.60501257990000001" blue="0.93078044039999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.5702066603" green="0.69988665800000005" blue="0.67195130059999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OVL-fI-wRi"/>

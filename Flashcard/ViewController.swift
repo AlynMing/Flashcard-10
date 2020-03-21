@@ -207,23 +207,23 @@ class ViewController: UIViewController {
         if answerOne  == correctAnswerButton{
             //frontLabel.isHidden = true
             flipFlashcard()
-            answerOne.isHidden = false
+            answerOne.isEnabled = true
         }
         else{
-            answerOne.isHidden = true
+            answerOne.isEnabled = false
         }
         //answerOne.isHidden = true
     }
     
     @IBAction func didTapTwo(_ sender: Any) {
-        //frontLabel.isHidden = true
+        
         if answerTwo == correctAnswerButton{
             //frontLabel.isHidden = true
             flipFlashcard()
-            answerTwo.isHidden = false
+            answerTwo.isEnabled = true
         }
         else{
-            answerTwo.isHidden = true
+            answerTwo.isEnabled = false
         }
     }
     
@@ -232,19 +232,19 @@ class ViewController: UIViewController {
         if answerThree == correctAnswerButton{
             //frontLabel.isHidden = true
             flipFlashcard()
-            answerThree.isHidden = false
+            answerThree.isEnabled = true
         }
         else{
-            answerThree.isHidden = true
+            answerThree.isEnabled = false
         }
     }
     @IBAction func didTapOnNext(_ sender: Any) {
         
         // reset all buttons/labels
         frontLabel.isHidden = false
-        answerOne.isHidden = false
-        answerTwo.isHidden = false
-        answerThree.isHidden = false
+        answerOne.isEnabled = true
+        answerTwo.isEnabled = true
+        answerThree.isEnabled = true
         
         // increment card index
         currentIndex = currentIndex + 1
@@ -261,9 +261,9 @@ class ViewController: UIViewController {
         
         // reset all the buttons/labels
         frontLabel.isHidden = false
-        answerOne.isHidden = false
-        answerTwo.isHidden = false
-        answerThree.isHidden = false
+        answerOne.isEnabled = true
+        answerTwo.isEnabled = true
+        answerThree.isEnabled = true
         
         //decrement card index
         currentIndex = currentIndex - 1
